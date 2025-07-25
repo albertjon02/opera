@@ -446,26 +446,40 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <h1>Opera Customer Support</h1>
-            <p>Get fast, reliable help from our expert support team 24/7</p>
-            
-            <div class="support-cards">
-                
-                <div class="support-card">
-                    <h3>💬 Live Chat</h3>
-                    <p>Instant messaging with support agents</p>
-                    <div class="contact-info">
-                        <strong>Available 24/7</strong><br>
-                        <span>Average wait: 2 minutes</span>
-                    </div>
-                    <a href="#chat" class="support-btn">Start Chat</a>
+<section class="hero" id="home">
+    <div class="container">
+        <h1>Opera Customer Support</h1>
+        <p>Get fast, reliable help from our expert support team 24/7</p>
+        
+        <div class="support-cards">
+            <div class="support-card">
+                <h3>💬 Live Chat</h3>
+                <p>Instant messaging with support agents</p>
+                <div class="contact-info">
+                    <strong>Available 24/7</strong><br>
+                    <span>Average wait: 2 minutes</span>
                 </div>
-                
+                <button class="support-btn" onclick="openZendeskChat()">Start Chat</button>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<!-- Start of Zendesk Widget script -->
+<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=7668c976-0fb7-47ee-8740-3e9115bdb10f"></script>
+<!-- End of Zendesk Widget script -->
+
+<!-- Chat Trigger Script -->
+<script>
+  function openZendeskChat() {
+    if (typeof zE !== 'undefined') {
+      zE('webWidget', 'open');
+    } else {
+      console.error("Zendesk widget is not loaded yet.");
+    }
+  }
+</script>
+
 
     <!-- Main Content -->
     <main class="main-content">
